@@ -4,21 +4,23 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" content="height=device-height">  
     <title>State Capitals Quiz</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="index.css" rel="stylesheet" type="text/css" />
   </head>
   <body class="center-contents fill-parent">
     <header class="center-contents">
       <h1>How well do you know the state capitals?</h1>
-      <button class="ansButton" id="b5">Start Quiz</button>
+      <button class="ansButton" id="js-b5">Start Quiz</button>
     </header>
-    <form role="form" class="hidden center-contents fill-parent" action="/some-server-endpoint" method="POST">
-        <label>Your score is <span id="correctAnswers">0</span>/<span id="questionsAsked">0</span></label>
-        <label>What is the capital of <span id="state"></span>?</label>
-        <button class="ansButton" id="b1"></button>
-        <button class="ansButton" id="b2"></button>
-        <button class="ansButton" id="b3"></button>
-        <button class="ansButton" id="b4"></button>
-        <label id="js-result" class="hidden"><img src="images/check-mark-1292787_640.png">Correct</label>
+    <form role="form" class="hidden fill-parent" action="/some-server-endpoint" method="POST">
+        <ul class="no-style">
+            <li><label>Your score is <span id="correctAnswers">0</span>/<span id="questionsAsked">0</span></label></li>
+            <li></li><label>What is the capital of <span id="js-state"></span>?</label></li>
+            <li></li><button type="submit" class="ansButton js-ansButton" id="js-b1"></button></li>
+            <li></li><button type="submit" class="ansButton js-ansButton" id="js-b2"></button></li>
+            <li></li><button type="submit" class="ansButton js-ansButton" id="js-b3"></button></li>
+            <li></li><button type="submit" class="ansButton js-ansButton" id="js-b4"></button></li>
+            <li></li><label id="js-result" class="hidden"><img src="images/check-mark-1292787_640.png">Correct</label></li>
+        </ul>
     </form>
   </body>
   <script src="states.js"></script>

@@ -30,3 +30,7 @@ label {
     justify-content: center;
     align-items: center;
 }
+
+.no-style {
+    list-style: none;
+}
