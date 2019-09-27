@@ -131,6 +131,8 @@ function handleFormSubmit(){
     });
 }
 
+handleFormSubmit();
+
 /* <ul class="no-style">
     
     
