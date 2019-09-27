@@ -254,5 +254,6 @@ const STORE = {
 	buttons: [{ id: "js-b0", correct: false, city: undefined}, { id: "js-b1", correct: false, city: undefined }, { id: "js-b2", correct: false, city: undefined }, { id: "js-b3", correct: false, city: undefined }],
 
 	currentQuestion: 0,
-	score: 0
+	score: 0,
+	state: {}
 };

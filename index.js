@@ -10,18 +10,19 @@
 
 const stateArr = getStateArr();
 
-function startGame(){
+function renderQuestion(){
     //this will render the form and start the quiz
     const randomNumber = generateRandomNumber();
-    state = getState(randomNumber);
+    STORE.state = getState(randomNumber);
     removeState(randomNumber);
-    const cities = shuffle(state.cities);
+    const cities = shuffle(STORE.state.cities);
     console.log(cities);
     assignButtons(cities);
     $('form').empty();
-    $('form').html(generateQuestionHTML(state));
+    $('form').html(generateQuestionHTML(STORE.state));
+}
 
-    //needs to deploy template with content
+function renderAnswer(){
 
 }
 
@@ -47,6 +48,7 @@ function assignButtons(cities) {
     //this will assign values to the buttons in the form
     let i = 0;
     cities.forEach(city =>{
+        if(city === STORE.state.capital){STORE.buttons[i].correct = true;}
         STORE.buttons[i].city = city;
         i++; 
     });
@@ -65,6 +67,21 @@ function generateQuestionHTML(state){
     return arr.join('');
 }
 
+function generateDisabledButtonItem(button){
+    if(button.correct){
+        return `<li class="adjustable-fill"><button type="submit" class="ansButton correct" id="${button.id}" disabled>${button.city}</button></li>`;
+    }
+    return `<li class="adjustable-fill"><button type="submit" class="ansButton" id="${button.id}" disabled>${button.city}</button></li>`;
+}
+
+function generateAnswerHTML(state){
+    const arr = ['<ul class="no-style center-contents">', askQuestion(state)];
+    STORE.buttons.forEach(button => {
+        arr.push(generateDisabledButtonItem(button));
+    });
+    arr.push('</ul>');
+    return arr.join('');
+}
 
 function askQuestion(state) {
     //this will ask the question
