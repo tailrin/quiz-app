@@ -1,0 +1,11 @@
+<ul class="no-style">
+    <li></li><span id="question">What is the capital of<span id="js-state"></span>?</span></li>
+    <li></li><button type="submit" class="ansButton js-ansButton" id="js-b1"></button></li>
+    <li></li><button type="submit" class="ansButton js-ansButton" id="js-b2"></button></li>
+    <li></li><button type="submit" class="ansButton js-ansButton" id="js-b3"></button></li>
+    <li></li><button type="submit" class="ansButton js-ansButton" id="js-b4"></button></li>
+    <li></li><label id="js-result" class="hidden"><img src="images/check-mark-1292787_640.png">Correct</label></li>
+</ul>
+<nav class="hidden">
+<button type="submit" class="ansButton" id="js-b6">Re-take Quiz</button>
+</nav>
