@@ -59,4 +59,5 @@ ul {
 
 .question {
     text-align: center;
+    display: block;
 }
