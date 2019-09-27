@@ -69,10 +69,10 @@ function generateQuestionHTML(state){
 }
 
 function generateDisabledButtonItem(button){
-    if(button.correct === true){
-        return `<li class="adjustable-fill"><button type="submit" class="ansButton correct" id="${button.id}" disabled>${button.city}</button></li>`;
-    }else if(button.selected === true && button.correct === true){
+    if(button.selected === true && button.correct === true){
         return `<li class="adjustable-fill"><button type="submit" class="ansButton correct-selected" id="${button.id}" disabled>${button.city}</button></li>`;
+    }else if(button.correct === true){
+        return `<li class="adjustable-fill"><button type="submit" class="ansButton correct" id="${button.id}" disabled>${button.city}</button></li>`;
     }else if(button.selected === true){
         return `<li class="adjustable-fill"><button type="submit" class="ansButton selected" id="${button.id}" disabled>${button.city}</button></li>`;
     } else {
@@ -80,9 +80,8 @@ function generateDisabledButtonItem(button){
     }
 }
 
-function setButtonToSelected(button){
-    button = STORE.buttons.indexOf(element => {return element.id === button.id;});
-    button.selected = true;
+function getButtonById(id){
+    return STORE.buttons.indexOf(element => {return element.id === id;});
 }
 
 function generateAnswerHTML(state){
