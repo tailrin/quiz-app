@@ -16,7 +16,7 @@ form {
 }
 
 ul {
-    width: 100%
+    width: 100%;
 }
 
 .fill-parent {
@@ -45,6 +45,7 @@ ul {
 
 .no-style {
     list-style: none;
+    width: 100%;
 }
 
 .game-info {
