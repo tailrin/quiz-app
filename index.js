@@ -120,7 +120,7 @@ function shuffle(array) {
 function handleFormSubmit(){
     $('form').submit(event => {
         event.preventDefault();
-        console.log(event.target.id);
+        console.log(event.target);
         switch(event.target.id){
             case 'start':
             case 'next' : renderQuestion(); break;
