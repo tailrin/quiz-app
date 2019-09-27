@@ -120,8 +120,8 @@ function shuffle(array) {
 function handleFormSubmit(){
     $('form').submit(event => {
         event.preventDefault();
-        console.log(event.target);
-        switch(event.target.id){
+        let eventTarget = handleClicks();
+        switch(eventTarget.id){
             case 'start':
             case 'next' : renderQuestion(); break;
             case 'js-b0': 
@@ -131,6 +131,13 @@ function handleFormSubmit(){
             default : break;
         }
     });
+}
+
+function handleClicks(){
+    let eventTarget = $('form').click(event => {
+        return event.target;
+    });
+    return eventTarget;
 }
 
 handleFormSubmit();
