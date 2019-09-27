@@ -251,7 +251,7 @@ const STORE = {
 		}
 	],
 
-	buttons: [{ id: "js-b0", correct: false, city: undefined}, { id: "js-b1", correct: false, city: undefined }, { id: "js-b2", correct: false, city: undefined }, { id: "js-b3", correct: false, city: undefined }],
+	buttons: [{ id: "js-b0", correct: false, city: undefined, selected: false}, { id: "js-b1", correct: false, city: undefined, selected: false}, { id: "js-b2", correct: false, city: undefined, selected: false}, { id: "js-b3", correct: false, city: undefined, selected: false}],
 
 	currentQuestion: 0,
 	score: 0,
