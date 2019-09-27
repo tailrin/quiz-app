@@ -23,7 +23,7 @@ form {
 
 .ansButton {
     display: block;
-    width: 300px;
+    width: 95%;
     height: 30px;
     margin: 5px;
 }
@@ -49,5 +49,5 @@ form {
 
 .adjustable-fill {
     height: 100%;
-    width: 100%;
+    width: 95%;
 }
