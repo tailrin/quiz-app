@@ -18,6 +18,7 @@ function startGame(){
     const cities = shuffle(state.cities);
     console.log(cities);
     assignButtons(cities);
+    $('form').empty();
     $('form').html(generateQuestionHTML(state));
 
     //needs to deploy template with content
@@ -52,11 +53,11 @@ function assignButtons(cities) {
 }
 
 function generateButtonItem(button){
-    return `<li><button type="submit" class="ansButton js-ansButton" id="${button.id}">${button.city}</button></li>`
+    return `<li><button type="submit" class="ansButton" id="${button.id}">${button.city}</button></li>`
 }
 
 function generateQuestionHTML(state){
-    const arr = ['<ul class="no-style">', askQuestion(state)];
+    const arr = ['<ul class="no-style center-contents">', askQuestion(state)];
     STORE.buttons.forEach(button => {
         arr.push(generateButtonItem(button));
     });
