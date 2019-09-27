@@ -23,7 +23,8 @@ function renderQuestion(){
 }
 
 function renderAnswer(){
-
+    $('form').empty();
+    $('form').html(generateAnswerHTML(STORE.state));
 }
 
 function getStateArr(){
@@ -68,10 +69,11 @@ function generateQuestionHTML(state){
 }
 
 function generateDisabledButtonItem(button){
-    if(button.correct){
+    if(button.correct === true){
         return `<li class="adjustable-fill"><button type="submit" class="ansButton correct" id="${button.id}" disabled>${button.city}</button></li>`;
+    }else{
+        return `<li class="adjustable-fill"><button type="submit" class="ansButton" id="${button.id}" disabled>${button.city}</button></li>`;
     }
-    return `<li class="adjustable-fill"><button type="submit" class="ansButton" id="${button.id}" disabled>${button.city}</button></li>`;
 }
 
 function generateAnswerHTML(state){

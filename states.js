@@ -127,7 +127,7 @@ const STORE = {
 		{
 			name: "Montana",
 			capital: "Helena",
-			cities: ["Helena", "Brockton", "Azure", "Butte-Silver Bow (balance)"]
+			cities: ["Helena", "Brockton", "Azure", "Butte-Silver Bow"]
 		},
 		{
 			name: "Nebraska",
