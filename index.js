@@ -117,7 +117,19 @@ function shuffle(array) {
   return array;
 }
 
-
+function handleFormSubmit(){
+    $('form').submit(event => {
+        event.preventDefault();
+        switch(event.target.id){
+            case 'start':
+            case 'next' : renderQuestion(); break;
+            case 'js-b0': 
+            case 'js-b1':
+            case 'js-b2':
+            case 'js-b3': renderAnswer(); break;
+        }
+    });
+}
 
 /* <ul class="no-style">
     
