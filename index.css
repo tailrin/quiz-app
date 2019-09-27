@@ -68,6 +68,9 @@ h2 {
     display: block;
 }
 
+.correct {
+    color: lightgreen;
+}
 
 @media screen and (min-width: 600px) {
     .adjustable-fill {
