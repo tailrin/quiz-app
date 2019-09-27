@@ -78,11 +78,10 @@ h2 {
     
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 800px) {
     .adjustable-fill {
         height: 60%;
         width: 40%;
-        margin-bottom: 10%
     }
 
     header {
