@@ -48,3 +48,8 @@ form {
 .game-info {
     width: 40%;
 }
+
+.adjustable-fill {
+    height: 100%;
+    width: 100%;
+}
