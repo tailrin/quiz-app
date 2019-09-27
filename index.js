@@ -53,7 +53,7 @@ function assignButtons(cities) {
 }
 
 function generateButtonItem(button){
-    return `<li><button type="submit" class="ansButton" id="${button.id}">${button.city}</button></li>`
+    return `<li class="adjustable-fill"><button type="submit" class="ansButton" id="${button.id}">${button.city}</button></li>`
 }
 
 function generateQuestionHTML(state){
