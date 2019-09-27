@@ -69,7 +69,7 @@ h2 {
 }
 
 .correct {
-    color: lightgreen;
+    background-color: lightgreen;
 }
 
 @media screen and (min-width: 600px) {
