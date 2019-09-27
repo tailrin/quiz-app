@@ -120,6 +120,7 @@ function shuffle(array) {
 function handleFormSubmit(){
     $('form').submit(event => {
         event.preventDefault();
+        console.log(event.target.id);
         switch(event.target.id){
             case 'start':
             case 'next' : renderQuestion(); break;
@@ -127,6 +128,7 @@ function handleFormSubmit(){
             case 'js-b1':
             case 'js-b2':
             case 'js-b3': renderAnswer(); break;
+            default : break;
         }
     });
 }
