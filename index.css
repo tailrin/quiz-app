@@ -15,6 +15,10 @@ form {
     border-style: solid;
 }
 
+ul {
+    width: 100%
+}
+
 .fill-parent {
     height: 100%;
     width: 100%;
