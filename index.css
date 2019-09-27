@@ -72,6 +72,10 @@ h2 {
         height: 100%;
         width: 80%;
     }
+    header {
+        margin-top: 3%;
+    }
+    
 }
 
 @media screen and (min-width: 400px) {
@@ -79,4 +83,9 @@ h2 {
         height: 60%;
         width: 40%;
     }
+
+    header {
+        margin-top: 0%;
+    }
+    
 }
