@@ -118,8 +118,7 @@ function shuffle(array) {
 }
 
 function handleFormSubmit(){
-    let eventTarget = handleClicks();
-    $('form').submit(event, eventTarget => {
+    $('.ansButton').submit(event, eventTarget => {
         event.preventDefault();
         switch(eventTarget.id){
             case 'start':
@@ -133,12 +132,7 @@ function handleFormSubmit(){
     });
 }
 
-function handleClicks(){
-    let eventTarget = $('form').click(event => {
-        return event.target;
-    });
-    return eventTarget;
-}
+
 
 handleFormSubmit();
 
