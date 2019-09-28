@@ -20,7 +20,11 @@ function generateDisabledButtonItem(button){
 }
 
 function generateNextButton(){
+    if(STORE.currentQuestion === 15){
+        return `<li><button type="submit" class="ansButton" id="end">See Results</button></li>`;
+    }
     return `<li><button type="submit" class="ansButton" id="next">Next Question</button></li>`;
+    
 }
 
 function generateAnswerHTML(state){
@@ -40,13 +44,15 @@ function generateAnswerHTML(state){
 
     arr.push(STORE.answerQuality, generateNextButton(), '</ul>');
     console.log("answer html was generated");
+    resetStoredValues();
+    console.log(`stored values reset`)
     return arr.join('');
 }
 
 function renderAnswer(){
     $('form').empty();
     $('form').html(generateAnswerHTML(STORE.state));
-    resetStoredValues();
+    
     console.log("the answer was rendered")
 }
 

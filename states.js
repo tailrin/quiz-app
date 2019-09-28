@@ -255,6 +255,7 @@ const STORE = {
 
 	currentQuestion: 0,
 	score: 0,
+	stateArr: undefined,
 	state: {},
 	eventTarget: undefined,
 	answerQuality: undefined

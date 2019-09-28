@@ -1,18 +1,14 @@
 //////////////////////PREPATORY FUNCTIONS/////////////////
 
 
-const stateArr = getStateArr();
-
-function getStateArr(){
-    return STORE.states;
-}
+STORE.stateArr = STORE.states;
 
 function getState(num) {
-    return stateArr[num];
+    return STORE.stateArr[num];
 }
 
 function removeState(num) {
-    stateArr.splice(num, 1)
+    STORE.stateArr.splice(num, 1)
 }
 
 function generateRandomNumber(){
