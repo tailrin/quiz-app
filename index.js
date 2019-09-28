@@ -12,6 +12,7 @@ const stateArr = getStateArr();
 
 function renderQuestion(){
     //this will render the form and start the quiz
+    resetStoredValues();
     const randomNumber = generateRandomNumber();
     STORE.state = getState(randomNumber);
     removeState(randomNumber);
@@ -81,15 +82,40 @@ function generateDisabledButtonItem(button){
 }
 
 function getButtonById(id){
-    return STORE.buttons.indexOf(element => {return element.id === id;});
+    return STORE.buttons.findIndex(button => { button.id === id;});
+}
+
+function generateNextButton(){
+    return `<li><button type="submit" class="ansButton" id="next">Next Question</button></li>`;
+}
+
+function resetStoredValues(){
+    STORE.buttons.forEach(button => {
+        button.correct = false;
+        button.selected = false;
+        button.city = undefined;
+    });
+    STORE.answerQuality = undefined;
+    STORE.eventTarget = undefined;
+    STORE.state = undefined;
 }
 
 function generateAnswerHTML(state){
     const arr = ['<ul class="no-style center-contents">', askQuestion(state)];
     STORE.buttons.forEach(button => {
+        if(button.id === STORE.eventTarget.id){
+            button.selected = true;
+            if(button.correct === true){
+                STORE.answerQuality = '<li><img src="images/correct.png" alt="green checkmark"><span>You got it right!</span></li>';
+            }else{
+                STORE.answerQuality = '<li><img src="images/wrong.png" alt="red x"><span>You got it wrong.</span></li>';
+            }
+        }
         arr.push(generateDisabledButtonItem(button));
     });
-    arr.push('</ul>');
+
+    arr.push(STORE.answerQuality, generateNextButton(), '</ul>');
+    //resetStoredValues();
     return arr.join('');
 }
 
@@ -118,23 +144,50 @@ function shuffle(array) {
 }
 
 function handleFormSubmit(){
-    $('.ansButton').submit(event => {
-        event.preventDefault();
-        switch(event.target.id){
-            case 'start':
-            case 'next' : renderQuestion(); break;
-            case 'js-b0': 
-            case 'js-b1':
-            case 'js-b2':
-            case 'js-b3': renderAnswer(); break;
-            default : break;
+    $('form').submit(function(event){
+        try {
+            event.preventDefault();
+            switch(STORE.eventTarget.id){
+                case 'start':
+                case 'next' : renderQuestion(); break;
+                case 'js-b0': 
+                case 'js-b1':
+                case 'js-b2':
+                case 'js-b3': renderAnswer(); break;
+                default : break;
+            } 
+        }catch (error) {
+            
         }
     });
 }
 
+function handleClicks(){
+    $('form').click(event => {
+        STORE.eventTarget = event.target;
+        handleFormSubmit(event.target);
+        $('#quiz').submit();
+    });
+}
+
+function handleEnterKey(){
+    $('#quiz').keypress(event => {
+        if (event.key === "Enter"){
+            STORE.eventTarget = event.target;
+            handleFormSubmit();
+            $('#quiz').submit();
+        }
+    });
+}
+
+function callBack(){
+    handleEnterKey();
+    handleClicks();
+}
 
 
-handleFormSubmit();
+callBack(); 
+
 
 /* <ul class="no-style">
     
