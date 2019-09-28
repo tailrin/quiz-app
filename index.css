@@ -60,10 +60,6 @@ img {
     width: 100%;
 }
 
-.game-info {
-    width: 40%;
-}
-
 .adjustable-fill {
     height: 100%;
     width: 95%;
@@ -78,11 +74,37 @@ img {
     background-color: lightgreen;
 }
 
+.game-info {
+    display: inline-block;
+    width: 50%
+}
+
+#game-info {
+    margin-right: 2%;
+}
+
+.adjustable-width {
+    width: 95%;
+}
+
+#question {
+    text-align: left;
+}
+
+#score{
+    text-align: right;
+}
+
 @media screen and (min-width: 600px) {
     .adjustable-fill {
         height: 100%;
         width: 80%;
     }
+
+    .adjustable-width {
+        width: 80%;
+    }
+
     header {
         margin-top: 3%;
     }
@@ -91,7 +113,11 @@ img {
 
 @media screen and (min-width: 1000px) {
     .adjustable-fill {
-        height: 40%;
+        height: 60%;
+        width: 40%;
+    }
+
+    .adjustable-width {
         width: 40%;
     }
 
