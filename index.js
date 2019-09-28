@@ -118,9 +118,9 @@ function shuffle(array) {
 }
 
 function handleFormSubmit(){
-    $('.ansButton').submit(event, eventTarget => {
+    $('.ansButton').submit(event => {
         event.preventDefault();
-        switch(eventTarget.id){
+        switch(event.target.id){
             case 'start':
             case 'next' : renderQuestion(); break;
             case 'js-b0': 
