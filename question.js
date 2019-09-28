@@ -27,5 +27,7 @@ function renderQuestion(){
     prepareQuestionInfo();
     $('form').empty();
     $('form').html(generateQuestionHTML(STORE.state));
+    STORE.currentQuestion++;
+    console.log('currentQuestion was incremented');
     console.log('the question was rendered')
 }
