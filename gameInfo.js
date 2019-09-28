@@ -9,8 +9,3 @@ function renderGameInfo(){
     console.log('game info was rendered')
 }
 
-function handleScore(){
-    STORE.buttons.forEach(button => {
-        if(button.correct && button.selected){STORE.score++; console.log('Score was incremented');}
-    });
-}

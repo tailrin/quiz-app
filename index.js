@@ -7,6 +7,7 @@ function handleFormSubmit(){
     $('form').submit(function(event){
         try {
             event.preventDefault();
+            console.log(STORE.eventTarget.id); 
             switch(STORE.eventTarget.id){
                 case 'retake':  
                 case 'start' : 
@@ -17,9 +18,13 @@ function handleFormSubmit(){
                 case 'js-b3' : renderAnswer(); renderGameInfo(); break;
                 case 'end'   : renderEndGame(); break;
                 default : break;
-            } 
+            }
         }catch (error) {
-            
+            if(`${error}`.includes(`Cannot read property 'id' of undefined`)){
+
+            } else{
+                console.log(error);
+            }
         }
     });
 }

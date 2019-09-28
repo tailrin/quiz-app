@@ -23,8 +23,7 @@ function generateNextButton(){
     if(STORE.currentQuestion === 15){
         return `<li><button type="submit" class="ansButton" id="end">See Results</button></li>`;
     }
-    return `<li><button type="submit" class="ansButton" id="next">Next Question</button></li>`;
-    
+    return `<li><button type="submit" class="ansButton" id="next">Next Question</button></li>`; 
 }
 
 function generateAnswerHTML(state){
@@ -52,7 +51,6 @@ function generateAnswerHTML(state){
 function renderAnswer(){
     $('form').empty();
     $('form').html(generateAnswerHTML(STORE.state));
-    
     console.log("the answer was rendered")
 }
 

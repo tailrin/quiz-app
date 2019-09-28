@@ -4,15 +4,19 @@
 STORE.stateArr = STORE.states;
 
 function getState(num) {
+    console.log(`random state was grabbed`);
     return STORE.stateArr[num];
+    
 }
 
 function removeState(num) {
+    console.log(`${STORE.stateArr[num]} was removed`);
     STORE.stateArr.splice(num, 1)
 }
 
 function generateRandomNumber(){
-    return Math.floor(Math.random() * 50);
+    console.log(`a random number was generated`);
+    return Math.floor(Math.random() * STORE.stateArr.length);
 }
 
 function assignButtons(cities) {
@@ -22,6 +26,7 @@ function assignButtons(cities) {
         STORE.buttons[i].city = city;
         i++; 
     });
+    console.log(`buttons were assigned`);
 }
 
 function resetStoredValues(){
@@ -33,6 +38,7 @@ function resetStoredValues(){
     STORE.answerQuality = undefined;
     STORE.eventTarget = undefined;
     STORE.state = undefined;
+    console.log(`stored values were reset`);
 }
 
 function shuffle(array) {
@@ -45,14 +51,9 @@ function shuffle(array) {
       array[currentIndex] = array[randomIndex];
       array[randomIndex] = temporaryValue;
     }
+    console.log(`array was shuffled`);
     return array;
   }
-
-function getButtonIndexById(id){
-    return STORE.buttons.findIndex(button => {
-        button.id === id;
-    });
-}
 
 function prepareQuestionInfo(){
     resetStoredValues();
