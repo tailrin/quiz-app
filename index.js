@@ -6,8 +6,7 @@
 function handleFormSubmit(){
     $('form').submit(function(event){
         try {
-            event.preventDefault();
-            console.log(STORE.eventTarget.id); 
+            event.preventDefault(); 
             switch(STORE.eventTarget.id){
                 case 'retake':  
                 case 'start' : 
