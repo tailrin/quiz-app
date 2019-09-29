@@ -8,13 +8,13 @@ function handleFormSubmit(){
         try {
             event.preventDefault(); 
             switch(STORE.eventTarget.id){
-                case 'retake':  
-                case 'start' : 
-                case 'next'  : renderQuestion(); renderGameInfo(); break;
+                case 'retake': 
+                case 'next'  : renderQuestion(); renderGameInfo(`question`); break; 
+                case 'start' : renderQuestion(); renderGameInfo(`start`); break;
                 case 'js-b0' : 
                 case 'js-b1' : 
                 case 'js-b2' : 
-                case 'js-b3' : renderAnswer(); renderGameInfo(); break;
+                case 'js-b3' : renderAnswer(); renderGameInfo(`ans`); break;
                 case 'end'   : renderEndGame(); break;
                 default : break;
             }

@@ -1,24 +1,29 @@
 //////////////////////PREPATORY FUNCTIONS/////////////////
 
-
+//Clones STORE.states array and stores in STORE.stateArr
 STORE.stateArr = STORE.states.slice(0);
 
+//Retrieves a random state from STORE.stateArr
 function getState(num) {
     console.log(`random state was grabbed`);
     return STORE.stateArr[num];
     
 }
 
+
+//Removes the retrieved state from STORE.stateArr
 function removeState(num) {
     console.log(`${STORE.stateArr[num].name} was removed`);
     STORE.stateArr.splice(num, 1)
 }
 
+//Generates a random number between 0 and the length of STORE.stateArr
 function generateRandomNumber(){
     console.log(`a random number was generated`);
     return Math.floor(Math.random() * STORE.stateArr.length);
 }
 
+//Assigns values to the properties of the STORE.buttons array
 function assignButtons(cities) {
     let i = 0;
     cities.forEach(city =>{
@@ -29,6 +34,7 @@ function assignButtons(cities) {
     console.log(`buttons were assigned`);
 }
 
+//resets stored values
 function resetStoredValues(){
     STORE.buttons.forEach(button => {
         button.correct = false;
@@ -41,6 +47,7 @@ function resetStoredValues(){
     console.log(`stored values were reset`);
 }
 
+//Randomizes order of an array
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
   
