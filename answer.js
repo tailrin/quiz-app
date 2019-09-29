@@ -34,7 +34,7 @@ function generateAnswerHTML(state){
             if(button.correct === true){
                 STORE.answerQuality = `<li id="ans-qual" class="adjustable-fill"><img src="images/correct.png" alt="green checkmark"><span id="answer-quality">You got it right!</span></li>`;
             }else{
-                STORE.answerQuality = `<li id="ans-qual" class="adjustable-fill"><img src="images/wrong.png" alt="red x"><span id="answer-quality">You got it wrong. The correct answer is ${button.city}.</span></li>`;
+                STORE.answerQuality = `<li id="ans-qual" class="adjustable-fill"><img src="images/wrong.png" alt="red x"><span id="answer-quality">You got it wrong. The correct answer is ${STORE.state.capital}.</span></li>`;
             }
         }
         arr.push(generateDisabledButtonItem(button));
