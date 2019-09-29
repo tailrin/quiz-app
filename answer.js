@@ -21,9 +21,9 @@ function generateDisabledButtonItem(button){
 
 function generateNextButton(){
     if(STORE.currentQuestion === 15){
-        return `<li><button type="submit" class="ansButton" id="end">See Results</button></li>`;
+        return `<li class="adjustable-fill"><button type="submit" class="ansButton" id="end">See Results</button></li>`;
     }
-    return `<li><button type="submit" class="ansButton" id="next">Next Question</button></li>`; 
+    return `<li class="adjustable-fill"><button type="submit" class="ansButton" id="next">Next Question</button></li>`; 
 }
 
 function generateAnswerHTML(state){
@@ -32,9 +32,9 @@ function generateAnswerHTML(state){
         if(button.id === STORE.eventTarget.id){
             button.selected = true;
             if(button.correct === true){
-                STORE.answerQuality = '<li><img src="images/correct.png" alt="green checkmark"><span id="answer-quality">You got it right!</span></li>';
+                STORE.answerQuality = '<li id="ans-qual" class="adjustable-fill"><img src="images/correct.png" alt="green checkmark"><span id="answer-quality">You got it right!</span></li>';
             }else{
-                STORE.answerQuality = '<li><img src="images/wrong.png" alt="red x"><span id="answer-quality">You got it wrong.</span></li>';
+                STORE.answerQuality = '<li id="ans-qual" class="adjustable-fill"><img src="images/wrong.png" alt="red x"><span id="answer-quality">You got it wrong.</span></li>';
             }
         }
         arr.push(generateDisabledButtonItem(button));
