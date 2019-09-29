@@ -1,7 +1,7 @@
 //////////////////////PREPATORY FUNCTIONS/////////////////
 
 
-STORE.stateArr = STORE.states;
+STORE.stateArr = STORE.states.slice(0);
 
 function getState(num) {
     console.log(`random state was grabbed`);

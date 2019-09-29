@@ -9,7 +9,7 @@
 function renderEndGame(){
     $('form').empty();
     $('form').html(generateEndGameHTML());
-    STORE.stateArr = STORE.states;
+    STORE.stateArr = STORE.states.slice(0);
     resetStoredValues();
     console.log("the end game was rendered")
 }
