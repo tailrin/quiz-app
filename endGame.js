@@ -19,7 +19,8 @@ function generateResults(){
     switch(true){
         case (STORE.score < 8) : result = `You didn't do so well.`; break;
         case (STORE.score < 12): result = `You did ok.`; break
-        case (STORE.score < 15): result = `You did really well!`; break;
+        case (STORE.score < 14): result = `You did really well!`; break;
+        case (STORE.score < 15): result = `Missed it by that much!`; break;
         default:  result = `Fantastic!!  You got a perferct score!!`; break;
     }
     console.log(`The result of the game was generated`);
