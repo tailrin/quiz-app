@@ -93,6 +93,7 @@ img {
 
 .correct {
     background-color: rgb(75, 240, 75);
+    color: black;
 }
 
 .game-info {
@@ -126,11 +127,13 @@ img {
 .correct-selected {
     background-color: rgb(75, 240, 75);
     border-style: 5px solid forestgreen;
+    color: black;
 }
 
 .selected {
     background-color: lightsalmon;
     border-style: 5px solid red;
+    color: black;
 }
 
 @media screen and (min-width: 600px) {
