@@ -10,7 +10,7 @@ function getState(num) {
 }
 
 function removeState(num) {
-    console.log(`${STORE.stateArr[num]} was removed`);
+    console.log(`${STORE.stateArr[num].name} was removed`);
     STORE.stateArr.splice(num, 1)
 }
 

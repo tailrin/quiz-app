@@ -31,22 +31,24 @@ function handleFormSubmit(){
 
 function handleClicks(){
     $('form').click(event => {
-        STORE.eventTarget = event.target;
-        console.log(`${event.target.id} was clicked`);
-        handleFormSubmit();
-        $('#quiz').submit();
+        redirectToFormSubmission();
     });
 }
 
 function handleEnterKey(){
     $('#quiz').keypress(event => {
         if (event.key === "Enter"){
-            STORE.eventTarget = event.target;
-            console.log(`${event.target.id} was selected`);
-            handleFormSubmit();
-            $('#quiz').submit();
+            redirectToFormSubmission();
         }
     });
+}
+
+function redirectToFormSubmission(){
+    STORE.eventTarget = event.target;
+    console.log(`${event.target.id} was selected`);
+    console.log('event was redirected to form submission');
+    handleFormSubmit();
+    $('#quiz').submit();
 }
 
 function callBack(){
