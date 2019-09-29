@@ -17,5 +17,5 @@ function renderGameInfo(ansOrQuestion){
 }
 
 function scoreAsPercentage(num){
-    return Math.round(STORE.score/(STORE.currentQuestion - num)) * 100;
+    return Math.round(STORE.score/(STORE.currentQuestion - num) * 100);
 }
