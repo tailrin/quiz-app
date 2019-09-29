@@ -1,4 +1,4 @@
 # quiz-app
 
-![Landing Page](/images/landing-page.png)
+![Landing Page](images/landing-page.png)
 
