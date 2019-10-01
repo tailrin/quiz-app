@@ -20,7 +20,7 @@ function handleFormSubmit(){
             }
         }catch (error) {
             if(`${error}`.includes(`Cannot read property 'id' of undefined`)){
-
+                console.log(`event listeners were looking for non-present DOM elements that will be added next step`)
             } else{
                 console.log(error);
             }
