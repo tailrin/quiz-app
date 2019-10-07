@@ -169,4 +169,8 @@ img {
         margin-top: 0%;
     }
     
+    body {
+        height: 100%;
+    }
+    
 }
